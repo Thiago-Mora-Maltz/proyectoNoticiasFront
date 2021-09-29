@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div>
+            <h1>{{noticia[0].titulo}}</h1>
+        </div>
+    </div>
+    <div>
+        <img [src]="noticia[0].archivo" alt="...">
+    </div>
+    <hr>
+    <div>
+        <p>
+            {{noticia[0].parrafo}}
+        </p>
+    </div>
+    
+    <hr>
+ <!------------------------------------------------------------------------------ FIN DE NOTICIA ------------------------------------------------------------ -->
+
+    <div *ngFor="let c of comentarios">
+    <ul class="list-unstyled">
+        <li class="media">
+          <img class="mr-3" [src]="c.foto_usuario" alt="Generic placeholder image" style="width: 64px; height: 64px;">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">{{c.usuario}}</h5>
+            {{c.comentario}}
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="media">
+        <img class="mr-3" [src]="image" alt="Generic placeholder image" style="width: 64px; height: 64px;">
+        <div class="media-body" >
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="col form-group">
+                    <input
+                     type="text"
+                      name="comentario" 
+                      placeholder="Agrega un comentario"
+                      class="form-control"
+                      formControlName="comentario"
+                      id="comentario"
+                    />
+                </div>
+                <div class="d-flex justify-content-end form-group">
+                    <button  style= "margin-right: 15px;;" type="submit" class="btn btn-info">Comentar</button>
+                </div>
+            </form>  
+        </div>
+      </div>
+ <!------------------------------------------------------------------------------ FIN DE COMENTARIOS ------------------------------------------------------------ -->
+      
+ <div class="row justify-content-center mt-20">
+    <div>
+        <h3>Otras Noticias</h3>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-4" *ngFor='let noticia of noticias'>
+      <div class="card" style="width: 18rem;" >
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{noticia.titulo}}</h5>
+            <p class="card-text">{{noticia.resumen}}</p>
+          <a routerLink="/noticia/{{noticia.id}}" class="btn btn-primary">Leer</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+    
+</div>

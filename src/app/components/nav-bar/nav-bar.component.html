@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black;">
+  <a class="navbar-brand" routerLink="/noticias">
+      <img src="..." width="30" height="30" alt="" loading="lazy">
+  </a>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+    <ul class="navbar-nav" *ngFor="let v of vector">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="{{v.link}}">{{v.titulo}}</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/alta">Alta de Noticia</a>
+      </li>
+    </ul>  
+  </div>
+  <div></div>
+    <div class="justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!loggedIn" routerLink="/login">Ingresa!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loggedIn" (click)="salir()">Cerrar Sesion!</a>
+        </li>
+      </ul>
+    </div>  
+</nav>

@@ -1,0 +1,73 @@
+<!-- <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <h4>¡Suscribite!</h4>
+        <form [formGroup]="form">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              class="form-control"
+              placeholder="Pedro"
+              formControlName="nombre"
+            />
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input
+              type="text"
+              id="apellido"
+              class="form-control"
+              placeholder="González"
+              formControlName="apellido"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mail">Mail</label>
+            <input
+              type="text"
+              id="mail"
+              class="form-control"
+              placeholder="ejemplo@gmail.com"
+              formControlName="mail"
+            />
+          </div>
+          <div class="form-group">
+            <select id="categoria" formControlName="categoria" class="form-control">
+                <option value="$100">$100</option>
+                <option value="$500">$500</option>
+                <option value="$1000">$1000</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          <div class="form-group">
+            <label for="foto">Imagen</label>
+            <input
+            type="number"
+              id="foto"
+              formControlName="foto"
+              class="form-control"
+              (change)="onFileSelected($event)"
+              />
+          </div>
+          <div class="col-3" *ngIf="previewUrl">
+            <img [src]="previewUrl" style="width: 250px; height: auto;" />
+          </div>
+          <button
+            type="button"
+            (click)="upload()"
+            class="btn btn-primary btn-block">
+            Aportar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div> -->
+  <!-- <button 
+  type="button"
+  class="btn btn-primary btn-block"
+  (click)="login()">
+    Login
+  </button> -->
+  <!-- Agregar span para agregar un valor propio ->¿if?, ¿doble binding? -->

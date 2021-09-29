@@ -1,0 +1,72 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <h4>Alta de Noticias</h4>
+        <form [formGroup]="form">
+          <div class="form-group">
+            <label for="titulo">Titulo</label>
+            <input
+              type="text"
+              id="titulo"
+              class="form-control"
+              placeholder="titulo"
+              formControlName="titulo"
+            />
+          </div>
+          <div class="form-group">
+            <label for="resumen">Descripcion</label>
+            <input
+              type="text"
+              id="resumen"
+              class="form-control"
+              placeholder="resumen"
+              formControlName="resumen"
+            />
+          </div>
+          <div class="form-group">
+            <label for="parrafo">Cuerpo de la noticia</label>
+            <input
+              type="text"
+              id="parrafo"
+              class="form-control"
+              placeholder="Cuerpo"
+              formControlName="parrafo"
+            />
+          </div>
+          <div class="form-group">
+            <select id="categoria" formControlName="categoria" class="form-control">
+                <option value="Politica">Politica</option>
+                <option value="Economia">Economia</option>
+                <option value="Deportes">Deportes</option>
+                <option value="Sociedad">Sociedad</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="foto">Imagen</label>
+            <input
+              type="file"
+              id="foto"
+              formControlName="foto"
+              class="form-control"
+              (change)="onFileSelected($event)"
+            />
+          </div>
+          <div class="col-3" *ngIf="previewUrl">
+            <img [src]="previewUrl" style="width: 250px; height: auto;" />
+          </div>
+          <button
+            type="button"
+            (click)="upload()"
+            class="btn btn-primary btn-block">
+            Alta de noticia
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <select #select (change) = testSelect(select.value)> -->
+  <!-- <select class="form-control" (change)="testSelect($event)">
+    <option value="uno">1</option>
+    <option value="dos">2</option>
+  </select> -->
